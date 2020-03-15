@@ -1914,8 +1914,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Home"
+  name: "Home",
+  data: function data() {
+    return {
+      notifications: true
+    };
+  }
 });
 
 /***/ }),
@@ -37931,7 +37942,36 @@ var render = function() {
   return _c(
     "v-layout",
     { attrs: { row: "", wrap: "", "align-center": "", "justify-center": "" } },
-    [_vm._v("\n    Home\n")]
+    [
+      _c(
+        "v-dialog",
+        {
+          attrs: { width: "300" },
+          model: {
+            value: _vm.notifications,
+            callback: function($$v) {
+              _vm.notifications = $$v
+            },
+            expression: "notifications"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            [
+              _c("v-card-title", [
+                _vm._v(
+                  "\n                Site Under Construction\n            "
+                )
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
   )
 }
 var staticRenderFns = []
